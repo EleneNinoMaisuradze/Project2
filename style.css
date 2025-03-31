@@ -83,3 +83,27 @@ body {
     text-decoration: none;
     color: blue;
 }
+/*მობილური ტელეფონებისთვის */
+@media (max-width:768px){
+    .sidebar{
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        height: auto;
+        display: none;
+    }
+    .sidebar.minimized{
+        display: none;
+    }
+    .main-content{
+        padding: 10px;
+    }
+    .overview-grid{
+        grid-template-columns: 1fr;
+    }
+    .transaction{
+        flex-direction: column;
+    }
+}
