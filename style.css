@@ -9,101 +9,113 @@ body {
     width: 100%;
 }
 .sidebar {
-    width: 200px;
+    width: 250px;
     background-color: #f0f0f0;
     padding: 20px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease;
+}
+.sidebar.minimized {
+    transform: translateX(-100%);
 }
 .sidebar-header {
     margin-bottom: 30px;
 }
-.sidebar-nav{
+.sidebar-nav {
     display: flex;
     flex-direction: column;
 }
-
 .nav-item {
     padding: 10px;
     margin-bottom: 5px;
     text-decoration: none;
     color: #333;
 }
-.nav-item.active{
+.nav-item.active {
     background-color: #ddd;
 }
-.minimize-menu{
+.minimize-menu {
     margin-top: 20px;
     cursor: pointer;
 }
-.main-content{
+.main-content {
     flex-grow: 1;
     padding: 20px;
+    margin-left: 250px; /* Sidebar-ის ადგილი დატოვოს */
 }
-.overview-grid{
+.overview-grid {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
-.card{
+.card {
     border: 1px solid #ddd;
     padding: 20px;
 }
-.pots-content, budgets-content, .recurring-bills-content{
+.pots-content, .budgets-content, .recurring-bills-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.budget-chart{
+.budget-chart {
     width: 100px;
-    height:100px ;
-    border-radius:50%;
+    height: 100px;
+    border-radius: 50%;
     border: 2px solid #ddd;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.budget-chart-inner{
+.budget-chart-inner {
     text-align: center;
 }
-.transaction-list{
+.transaction-list {
     margin-bottom: 20px;
 }
-.transaction{
+.transaction {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px;
-    border-bottom:1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 .positive {
-    color:green
+    color: green;
 }
-.negative{
-    color:red
+.negative {
+    color: red;
 }
-.see-details, .view-all{
+.see-details, .view-all {
     text-decoration: none;
     color: blue;
 }
-/*მობილური ტელეფონებისთვის */
-@media (max-width:768px){
-    .sidebar{
+
+/* მობილური ტელეფონებისთვის */
+@media (max-width: 768px) {
+    .sidebar {
         width: 100%;
+        height: auto;
         position: fixed;
         top: 0;
         left: 0;
         z-index: 100;
-        height: auto;
         display: none;
     }
-    .sidebar.minimized{
+    .sidebar.minimized {
         display: none;
     }
-    .main-content{
+    .main-content {
         padding: 10px;
+        margin-left: 0;
     }
-    .overview-grid{
+    .overview-grid {
         grid-template-columns: 1fr;
     }
-    .transaction{
+    .transaction {
         flex-direction: column;
+        align-items: flex-start;
     }
 }
