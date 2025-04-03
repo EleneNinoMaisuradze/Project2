@@ -2,7 +2,8 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
+    display: flex; 
+    
 }
 .container {
     display: flex;
@@ -10,7 +11,7 @@ body {
 }
 .sidebar {
     width: 250px;
-    background-color: #f0f0f0;
+    background-color: #333; /* შეცვლილი ფერი */
     padding: 20px;
     height: 100vh;
     position: fixed;
@@ -32,19 +33,22 @@ body {
     padding: 10px;
     margin-bottom: 5px;
     text-decoration: none;
-    color: #333;
+    color: white; /* შეცვლილი ფერი */
 }
 .nav-item.active {
-    background-color: #ddd;
+    background-color: #555; /* შეცვლილი ფერი */
+    border-radius: 5px;
 }
 .minimize-menu {
     margin-top: 20px;
     cursor: pointer;
+    color: white; /* შეცვლილი ფერი */
 }
 .main-content {
     flex-grow: 1;
     padding: 20px;
     margin-left: 250px; /* Sidebar-ის ადგილი დატოვოს */
+    background-color: #f9f9f9; /* შეცვლილი ფერი */
 }
 .overview-grid {
     display: grid;
@@ -54,6 +58,9 @@ body {
 .card {
     border: 1px solid #ddd;
     padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* დამატებული ჩრდილი */
+    background-color: white;
 }
 .pots-content, .budgets-content, .recurring-bills-content {
     display: flex;
@@ -118,4 +125,5 @@ body {
         flex-direction: column;
         align-items: flex-start;
     }
-}
+} 
+ 
